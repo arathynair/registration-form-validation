@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./registration.css" />
+    <title>Registration</title>
+    <script>
+      function validateform() {
+        console.log("entered....");
+        var name = document.getElementById("username");
+        var firstpassword = document.getElementById("pwd");
+        var secondpassword = document.getElementById("pwd-repeat");
+        var email = document.getElementById("email");
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if (name.value == null || name.value == "") {
+          alert("Name can't be blank");
+          return false;
+        } else if (firstpassword.value == null || firstpassword.value == "") {
+          alert("Password can't be blank");
+          return false;
+        } else if (firstpassword.value.length < 6) {
+          alert("Password must be at least 6 characters long.");
+          return false;
+        } else if (firstpassword.value != secondpassword.value) {
+          alert("Password must be same");
+          return false;
+        } else if (!email.value.match(mailformat)) {
+          alert("Invalid mailId");
+          return false;
+        } else {
+          return true;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <form action="./registrationcomplete.html" onsubmit="return validateform()">
+      <!-- <form> -->
+      <!-- class named "container" is assigned to div -->
+      <div class="container">
+        <h1>Register</h1>
+        <img
+          src="https://tse1.mm.bing.net/th/id/OIP.ICDResenXXP8CveEbF3gMAHaE8?pid=ImgDet&rs=1"
+          width="430"
+          height="150"
+        />
+        <p>Kindly fill in this form to register.</p>
+        <label for="username"><b>Username</b></label>
+        <input
+          type="text"
+          placeholder="Enter username"
+          name="username"
+          id="username"
+        />
+
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" id="email" />
+
+        <label for="age"><b>Age</b></label>
+        <input
+          type="number"
+          placeholder="Enter age"
+          name="age"
+          id="age"
+          required
+        />
+
+        <div>
+          <label for="gender"><b>Gender</b></label>
+          <input type="radio" id="gender" name="gender" value="male" />
+          <label for="gender">Male</label>
+
+          <input type="radio" id="gender" name="gender" value="Female" />
+          <label for="gender">Female</label>
+
+          <input type="radio" id="gender" name="gender" value="others" />
+          <label for="gender">Others</label>
+        </div>
+        <b></b>
+
+        <label for="country"><b>Country</b></label>
+        <select>
+          <option value="India">India</option>
+
+          <option value="US">US</option>
+
+          <option value="Others">Others</option>
+        </select>
+
+        <label for="pwd"><b>Password</b></label>
+        <input
+          type="password"
+          placeholder="Enter Password"
+          name="pwd"
+          id="pwd"
+        />
+
+        <label for="pwd-repeat"><b>Repeat Password</b></label>
+        <input
+          type="password"
+          placeholder="Repeat Password"
+          name="pwd-repeat"
+          id="pwd-repeat"
+        />
+
+        <button type="submit">Register</button>
+      </div>
+
+      <div>
+        <p>Already have an account? <a href="#">Log in</a>.</p>
+      </div>
+    </form>
+  </body>
+</html>

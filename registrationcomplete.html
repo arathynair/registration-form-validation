@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./registration.css" />
+    <title>Registrationcomplete</title>
+  </head>
+  <body>
+      <form>
+    <div class="container">
+        <p>Please watch the video.</p>
+      <video controls>
+        <source src="movie.mp4" type="video/mp4" width="730" height="250" />
+        Your browser does not support the html video tag.
+      </video>
+      <b></b></br>
+      <div>
+        <label for="language"><b>Programming Languages</b></label></br>
+        <input type="checkbox" id="C" name="C" value="C" />
+        <label>C</label> <br />
+        <input
+          type="checkbox"
+          id="Java"
+          name="Java"
+          value="Java"
+          checked="?yes?"
+        />
+        <label>Java</label> <br />
+        <input type="checkbox" id="Python" name="Python" value="Python" />
+        <label>Python</label> <br />
+        <input type="checkbox" id="PHP" name="PHP" value="PHP" />
+        <label>PHP</label>
+      </div>
+      <label class="toggle">
+        <input class="toggle-checkbox" type="checkbox" checked>
+        <div class="toggle-switch"></div>
+        <span class="toggle-label">I Agree to all the terms and conditions</span>
+      </label></br>
+      <button type="submit">Submit</button>
+    </div>
+</form>
+  </body>
+</html>
